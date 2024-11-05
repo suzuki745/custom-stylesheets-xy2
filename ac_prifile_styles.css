@@ -1,0 +1,441 @@
+/* 
+   ブラウザのスタイルをリセット
+   http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1.2;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+/* wordpress themeからコピー*/
+body {
+    font-family: "Noto Sans JP", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.modal {
+
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh;
+    height: 100dvh; */
+    justify-content: center;
+    /* left: 0; */
+    opacity: 1;
+    /*
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    position: fixed;
+    right: 0;
+    top: 0; */
+    /* visibility: hidden; */
+    width: 100%;
+    z-index: 1;
+}
+
+/*
+  .modal.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+  */
+.modal::before,
+.modal::after {
+    content: "";
+    width: 1px;
+    height: 20px;
+    display: flex;
+}
+
+.modal .modal-content {
+    aspect-ratio: 1/1;
+    max-width: 768px;
+    background-color: #fff;
+    /* border-radius: 4px; */
+    display: block;
+    left: 50%;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    /* padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);*/
+    z-index: 99;
+}
+@media print{
+    .modal .modal-content {
+        max-width:13cm;
+}
+}
+@media (max-width: 768px) and (orientation: landscape) {
+    .modal .modal-content {
+        aspect-ratio: 4/3;
+    }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .modal .modal-content {
+        aspect-ratio: 3/4;
+    }
+}
+
+.modal .modal-content .close {
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    filter: drop-shadow(0px 0px 2px rgb(255, 255, 255)) drop-shadow(0px 0px 2px rgb(255, 255, 255)) drop-shadow(0px 0px 2px rgb(255, 255, 255)) drop-shadow(0px 0px 2px rgb(255, 255, 255));
+    font-size: 2.4rem;
+    position: sticky;
+    left: 0;
+    line-height: 1;
+    top: 0;
+    height: 2.4rem;
+    margin: 0;
+    padding: 0;
+    width: 2.4rem;
+    z-index: 9999;
+}
+
+.modal .modal-content .modal-content-inner {
+    align-items: center;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    margin: auto;
+    position: relative;
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+    width: 90%;
+    z-index: 100;
+}
+
+.modal .modal-content .modal-content-inner .image-wrap {
+    margin-bottom: 10px;
+}
+
+.modal .modal-content .modal-content-inner .image-wrap img {
+    display: block;
+    height: auto;
+    margin: auto;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    .modal .modal-content .modal-content-inner .image-wrap img {
+        max-width: 300px;
+    }
+}
+
+.modal .modal-content .modal-content-inner button.modal-close {
+    align-self: center;
+    background-color: #0092e5;
+    border: #0092e5 solid 1px;
+    border-radius: 2em;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 30px 0;
+    padding: 5px;
+    width: 12em;
+}
+
+.modal .modal-content .modal-content-inner button.modal-close:hover {
+    opacity: 0.7;
+}
+
+.modal-bg {
+    background-color: rgba(0, 0, 0, 0.8);
+    bottom: 0;
+    /* display: none; */
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+/*
+  .modal-bg.is-open {
+    display: block;
+  }
+  */
+
+/* 以下自分で再定義 */
+.modal-content {
+    /* 分かりやすさのため枠に影をつけています */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(0, 0, 0, 0.1);
+    margin-top:1.5em;
+}
+
+.modal-content:not(:last-of-type) {
+    margin-bottom: 1.5em;
+}
+
+.modal-content-inner {
+    padding: 1em 2em;
+
+    h2 {
+        /*　氏名（敬称略）*/
+        font-size: x-large;
+        font-weight: 700;
+        padding-bottom: 0.5em;
+    }
+
+    h3 {
+        /* 肩書・所属 */
+        font-size: large;
+        font-weight: 600;
+        padding-bottom: 0.5em;
+    }
+
+    h4 {
+        /* 小見出し（学歴・職歴・資格 etc.）*/
+        font-size: medium;
+        font-weight: 600;
+        padding-bottom: 0.2em;
+    }
+
+    p{
+        /* 地の文、字下げ無し、下に1行マージン */
+        text-indent:0;
+        margin-bottom:1em;
+            word-wrap: break-word;
+            white-space:normal
+        }
+    p:last-child{
+        margin-bottom:0
+    }
+    
+
+    table {
+        /* 年表 |yyyy年|m月|内容| */
+        border-collapse: collapse;
+        border: none;
+        margin-bottom: 0.5em;
+    }
+
+    .two-cols-first,.three-cols-first {
+        /* 最初のtdに適用するスタイル */
+        padding: 0 0 0 10px;
+        vertical-align: baseline;
+        white-space: nowrap;
+
+    }
+    .two-cols-first{
+        padding-right: 10px;
+    }
+    .two-cols-first::after,.three-cols-first::after{
+        content: "年";
+    }
+    .two-cols-last, .three-cols-last{
+        /* 最後のtdに適用するスタイル */
+        text-align: left;
+        text-indent: 0;
+    }
+       
+    .three-cols-second {
+        /* 2番目のtdに適用するスタイル */
+        padding-right: 10px;
+        vertical-align: baseline;
+        text-align: right;
+        white-space: nowrap;
+    }
+    .three-cols-second::after{
+        content: "月";
+    }
+    .empty::after {
+        content: none;
+    }
+
+    dl {
+        display: grid;
+        grid-template-columns: max-content 1fr; /* dtを固定幅、ddを自動幅で設定 */
+        align-items: start;
+        column-gap: 1em;
+        margin-bottom: 0.5em
+    }
+    
+    dt {
+        font-weight: bold;
+    }
+    
+    dd {
+        margin: 0; /* デフォルトの余白を消す */
+    }
+    ul li{
+        list-style-type: disc;
+        width: 100%;
+        margin-left:1.5em
+    }
+
+}
+
+h1{
+    font-size:1.8em;
+    font-weight: 800;
+    padding: 0.5em 2em
+}
+
+/* 以下説明箇所の整形用 */
+
+pre{
+    margin: 0.5em 2em;
+    background-color: #eee;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.4em;
+    padding: 1em;
+}
+
+div.description{
+    width:80%;
+
+h2{
+    font-size:1.4em;
+    font-weight:700;
+    background-color: #ccc;
+    padding: 0.2em 0;
+}
+
+ul{
+    list-style: disc;
+    li{
+        margin-left:  1em;
+    }
+}
+}
