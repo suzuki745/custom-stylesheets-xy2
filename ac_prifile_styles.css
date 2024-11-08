@@ -343,12 +343,11 @@ body {
     }
     
 
-    table {
+    table.ja {
         /* 年表 |yyyy年|m月|内容| */
         border-collapse: collapse;
         border: none;
         margin-bottom: 0.5em;
-    }
 
     .two-cols-first,.three-cols-first {
         /* 最初のtdに適用するスタイル */
@@ -382,6 +381,71 @@ body {
     .empty::after {
         content: none;
     }
+    }
+
+    table.en {
+        /* 年表 |yyyy年|m月|内容| */
+        border-collapse: collapse;
+        border: none;
+        margin-bottom: 0.5em;
+    
+
+    .two-cols-first,.three-cols-second {
+        /* 最初のtdに適用するスタイル */
+        padding: 0 0 0 10px;
+        vertical-align: baseline;
+        white-space: nowrap;
+        
+        padding-right: 10px;
+
+    }
+    
+    .two-cols-last, .three-cols-last{
+        /* 最後のtdに適用するスタイル */
+        text-align: left;
+        text-indent: 0;
+    }
+       
+    .three-cols-first {
+     /* 2番目のtdに適用するスタイル */
+        padding-right: 10px;
+        vertical-align: baseline;
+        text-align: right;
+        white-space: nowrap;
+    }
+    
+    .empty::after {
+        content: none;
+    }
+    }
+    table.start-end{
+    
+        td:first-child {
+        padding: 0 8px;
+        vertical-align: baseline;
+        text-align: right;
+        white-space: nowrap;
+        }
+        td:nth-child(2){
+            vertical-align: baseline;
+            white-space: nowrap;
+        }
+        td:nth-child(2)::after{
+            content: "\00a0\2011\00a0"
+        }
+        td:nth-child(3){
+            padding: 0 8px 0 0;
+        vertical-align: baseline;
+        white-space: nowrap;
+        }
+        
+        td:last-child{
+            text-align: left;
+            text-indent: 0;
+            padding-left:10px
+        }
+    
+    }
 
     dl {
         display: grid;
@@ -405,6 +469,9 @@ body {
     }
 
 }
+
+
+
 
 h1{
     font-size:1.8em;
