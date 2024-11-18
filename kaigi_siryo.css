@@ -103,6 +103,7 @@
     & > li {
       font-size: 9pt;
       text-align: center;
+      list-style: none;
     }
   }
 
@@ -134,6 +135,11 @@
 .item.w-40 {
   /* 子要素の幅を設定 */
   width: calc(40%); /* 50%の幅で、マージンやパディングを考慮 */
+}
+
+.item.w-60 {
+  /* 子要素の幅を設定 */
+  width: calc(60%); /* 50%の幅で、マージンやパディングを考慮 */
 }
 
 
