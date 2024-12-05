@@ -44,7 +44,9 @@ div.header{
     grid-template-columns: 1fr 1fr;
     column-gap: 0;
 }
-
+.leading{
+    display:none;
+}
 .day1,
 .day2 {
     border: solid 2px black;
