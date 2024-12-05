@@ -41,7 +41,8 @@ div.header{
 }
 .leading{
     display:block;
-    p{
+    margin:1em 0;
+    & p{
         text-indent:1em;
     }
 }
