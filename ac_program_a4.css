@@ -76,3 +76,6 @@ div.header{
 .dashed {
     border-bottom: dashed 1px grey;
 }
+.right {
+    text-align: right;
+}
