@@ -43,8 +43,8 @@ div.header{
 .leading{
     display:block;
     margin:1em 0;
-    & p{
-        text-indent:1em !important;
+    > p{
+        text-indent: 1em !important;
     }
 }
 .program {
