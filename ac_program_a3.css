@@ -70,10 +70,10 @@ div.header{
     margin: 0.2em 0
     }
     & p{
-    margin-bottom: 0.2em;
+    margin-bottom: 0.1em;
     }
     & o1,ul{
-    margin-bottom:0.2em;
+    margin-bottom:0.1em;
     }
 }
 
