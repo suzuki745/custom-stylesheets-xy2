@@ -73,11 +73,10 @@ div.header{
     & p, li{
     font-size:10.5pt;
     margin-bottom: 0.1em;
-    line-height: 1.1em;
+    line-height: 1em;
     }
     & o1,ul{
     margin-bottom:0.1em;
-    line-height: 1.1em;
     }
 }
 
