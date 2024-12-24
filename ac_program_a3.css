@@ -62,6 +62,7 @@ div.header{
     margin: 0;
     padding: 0.2em 0;
     font-weight: bold;
+    font-size:11pt;
     }
     & h3:first-child{
     border-top: 2px;
@@ -73,7 +74,7 @@ div.header{
     & p, li{
     font-size:10.5pt;
     margin-bottom: 0.1em;
-    line-height: 1em;
+    line-height: 1.1em;
     }
     & o1,ul{
     margin-bottom:0.1em;
