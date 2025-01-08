@@ -83,6 +83,9 @@ div.header{
 
 .day2 {
     border-left: none;
+    h4 {
+        margin: 0.1em 0 0.1em
+        }
 }
 
 .dashed {
