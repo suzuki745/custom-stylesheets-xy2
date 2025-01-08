@@ -31,13 +31,13 @@ div.header{
     }
 .header h2{
     grid-column:2;
-    margin:0 0 0.5em;
+    margin:0 0 0.3em;
     padding:0
 }
 .header p.note{
     grid-column:3;
     justify-self:end;
-    margin:0 0 0.5em;
+    margin:0 0 0.3em;
     padding:0
 }
 .program {
