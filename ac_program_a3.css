@@ -90,6 +90,8 @@ div.header{
 
 .dashed {
     border-bottom: dashed 1px grey;
+    margin-block-start: 0.1em;
+    margin-block-end: 0.1em;
 }
 .right {
     text-align: right;
