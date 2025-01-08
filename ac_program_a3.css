@@ -93,6 +93,9 @@ div.header{
     li{
         margin: bottom 0;
     }
+    p{
+        line-height: 1.05em;
+    }
 }
 
 .dashed {
