@@ -78,6 +78,7 @@ div.header{
     }
     & o1,ul{
     margin-bottom:0.1em;
+    padding-left: 1em;
     }
 }
 
