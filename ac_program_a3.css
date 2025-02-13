@@ -94,6 +94,7 @@ div.header{
         margin: bottom 0;
     }
     p{
+        font-size:10pt;
         line-height: 1.05em;
     }
 }
