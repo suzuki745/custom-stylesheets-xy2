@@ -72,10 +72,10 @@
     content: "（" counter(list) "）\a0";
   }
 
-  ul.no-indent{
+  ul.no-indent, ol.no-indent{
     padding-left:0.5em;
   }
-  ul>li.no-disc, ul.no-disc>li{
+  ul>li.no-disc, ul.no-disc>li, ol.maru li{
     list-style:none;
     padding-left:0;
     padding: 1px 0;
