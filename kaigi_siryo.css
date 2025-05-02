@@ -112,6 +112,19 @@
     page-break-after: always;
   }
 
+  .admonition {
+    --admonition-border-color: #2a9d8f; /* 緑色のライン */
+    --admonition-background-color: #e9edc9; /* 薄い黄緑色の背景 */
+    --admonition-text-color: #283618; /* 濃い緑色のテキスト */
+    --admonition-icon: "💡"; /* アイコンを変更可能 */
+  
+    padding: 1rem;
+    border-left: 4px solid var(--admonition-border-color);
+    background-color: var(--admonition-background-color);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
   @page{
     size: A4;
     margin: 20mm 20mm 20mm 20mm;
