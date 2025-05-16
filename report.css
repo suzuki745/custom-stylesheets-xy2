@@ -38,8 +38,11 @@ span#confidential {
 }
   
   h1{
-    text-align:center;
-    font-size:14pt;
+    text-align:left;
+    font-size:12pt;
+    font-family: 'MS Gothic', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    letter-spacing: 1em;
+    text-decoration: underline;
     border:none;
   }
   h2 {
