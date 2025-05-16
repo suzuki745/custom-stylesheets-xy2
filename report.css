@@ -5,7 +5,7 @@
   margin: 20mm 20mm 14mm 20mm;
 
   @top-left {
-    content: url("confidential.svg");
+    content: url("https://suzuki745.github.io/custom-stylesheets-xy2/images/confidential.svg");
     /* SVG画像のパス */
     /* 必要に応じてサイズ調整 */
     width: 100px;
