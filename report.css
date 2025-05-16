@@ -6,20 +6,7 @@
 
   @top-left {
     content: url("https://suzuki745.github.io/custom-stylesheets-xy2/images/confidential.svg");
-    /* SVG画像のパス */
-    /* 必要に応じてサイズ調整 */
-    width: 100px;
-    /* 幅を調整 */
-    height: 30px;
-    /* 高さを調整 */
-    /* 画像の位置調整 */
-    vertical-align: top;
-    /* 上揃え */
-    text-align: left;
-    /* 左揃え */
-    /* SVGの表示に関する設定 */
-    display: inline-block;
-    /* インライン要素として扱う */
+    
   }
 
   @top-right {
