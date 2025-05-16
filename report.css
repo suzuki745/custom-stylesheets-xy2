@@ -5,7 +5,7 @@
   margin: 20mm 20mm 14mm 20mm;
 
   @top-left {
-    content: url("./confidential.svg");
+    content: url("confidential.svg");
     /* SVG画像のパス */
     /* 必要に応じてサイズ調整 */
     width: 100px;
