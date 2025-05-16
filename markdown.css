@@ -267,3 +267,14 @@ pre {
 .vscode-dark td {
 	border-color: rgba(255, 255, 255, 0.18);
 }
+
+/* sup sub 基本スタイル定義 */
+
+sup {
+	font-size: smaller;
+	vertical-align: super;
+}
+sub {
+	font-size: smaller;
+	vertical-align: sub;
+}
