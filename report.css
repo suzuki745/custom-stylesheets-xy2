@@ -6,9 +6,12 @@
 
   @top-left {
     content: url("https://suzuki745.github.io/custom-stylesheets-xy2/images/confidential_14pt.svg");
-    transform: scale(1.2); /* 2倍に拡大 */
-    transform-origin: top left; /* 拡大の中心点を左上に設定 */
-    display: inline-block; /* 念のため追加 */
+    transform: scale(1.2);
+    /* 2倍に拡大 */
+    transform-origin: top left;
+    /* 拡大の中心点を左上に設定 */
+    display: inline-block;
+    /* 念のため追加 */
   }
 
   @top-right {
@@ -34,10 +37,20 @@ h1 {
   text-align: left;
   font-size: 12pt;
   font-family: 'MS Gothic', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  letter-spacing: 1em;
+  border: none
+}
+
+h1>span {
   display: inline-block;
-  box-shadow: inset 0 -0.1em 0 0 currentColor;
-  border: none;
+  margin-right: 1em;
+  /* 文字間 */
+  border-bottom: 1px solid currentColor;
+  /* 下線 */
+}
+
+h1>span:last-child {
+  margin-right: 0;
+  /* 最後の文字の後に余計な間隔を作らない */
 }
 
 h2 {
