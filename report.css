@@ -1,0 +1,224 @@
+@import url(markdown.css);
+
+@page{
+    size: A4;
+    margin: 20mm 20mm 14mm 20mm;
+    @top-left {
+    content: "社外秘・内部資料";
+    color: red;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 12px;
+    /* position: fixed;  @pageルール内では不要 */
+    top: 1cm; /* ページのmarginに合わせて調整 */
+    left: 2cm; /* ページのmarginに合わせて調整 */
+    display: block; /* 念のため */
+    }
+    @top-right{
+      content: "※原則1週間以内に報告";
+      font-size: 10.5pt;
+      display: block;
+    }
+    @bottom-center{
+      content: counter(page)" / "counter(pages) ;
+      }
+  }
+
+*{
+    font-size:11pt;
+    font-family:"Times New Roman","Yu Mincho","MS Mincho",serif;
+    
+    line-height:1.3em;
+    vertical-align:baseline;
+}
+  
+  h1{
+    text-align:center;
+    font-size:14pt;
+    border:none;
+  }
+  h2 {
+    font-size:12pt;
+    font-weight:bold;
+    border:none
+  }
+  
+  h3{
+    font-size:12pt;
+    font-weight:normal;
+    border:none;
+  }
+  
+  p {
+    margin-bottom: 0.5em;
+    text-indent:1em;
+  }
+
+  p.no-indent{
+    text-indent:0;
+  }
+
+  p.right{
+    text-align:right;
+  }
+
+  .center{
+    text-align: center;
+  }
+
+  /* sup sub 基本スタイル定義 */
+
+  sup.footnote-ref {
+    font-size: 9pt;
+    vertical-align: super;
+  }
+  sub {
+    font-size: 9pt;
+    vertical-align: sub;
+  }
+  
+  ul{
+    padding-left: 2em
+  }
+
+  li, ul>li>ol>li {
+    text-indent: 0em;
+    vertical-align:middle
+  }
+
+  ol.custom-marker>li{
+    margin-bottom:0.5em
+  }
+
+  ol.custom-marker {
+    counter-reset: list;
+  }
+  
+  ol.custom-marker > li {
+    list-style: none;
+    counter-increment: list;
+  }
+
+  ol.custom-marker.parens-around.lower-roman > li::marker {
+    content: "(" counter(list, lower-roman) ")\a0";
+  }
+
+  ol.custom-marker.parens-around.decimal > li::marker {
+    content: "（" counter(list) "）\a0";
+  }
+
+  ul.no-indent, ol.no-indent{
+    padding-left:0.5em;
+  }
+  ul>li.no-disc, ul.no-disc>li, ol.maru li{
+    list-style:none;
+    padding-left:0;
+    padding: 1px 0;
+    margin-bottom:0.4em
+  }
+
+  .border-box{
+    border:solid 1px black;
+    padding:1px 2px 0;
+    line-height:1em
+  }
+
+  .asterisks{
+    list-style-type: '*';
+  }
+
+  /* 写真を2行で表示する際に使用 */
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40%, auto));
+    gap: 0.5em;
+    max-width: 600px;
+    padding:0;
+    margin:0;
+    & > li {
+      font-size: 9pt;
+      text-align: center;
+      list-style: none;
+    }
+  }
+
+  .pagebreak {
+    page-break-after: always;
+  }
+
+  .admonition {
+    --admonition-border-color: #2a9d8f; /* 緑色のライン */
+    --admonition-background-color: #e9edc9; /* 薄い黄緑色の背景 */
+    --admonition-text-color: #283618; /* 濃い緑色のテキスト */
+    --admonition-icon: "💡"; /* アイコンを変更可能 */
+  
+    padding: 1rem;
+    border-left: 4px solid var(--admonition-border-color);
+    background-color: var(--admonition-background-color);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  @page{
+    size: A4;
+    margin: 20mm 20mm 20mm 20mm;
+    @bottom-center{
+      content: counter(page)" / "counter(pages) ;
+      }
+  }
+
+/* 2段組み */
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap:0
+}
+
+.item.w-50 {
+  /* 子要素の幅を設定 */
+  width: calc(50%); /* 50%の幅で、マージンやパディングを考慮 */
+}
+
+.item.w-40 {
+  /* 子要素の幅を設定 */
+  width: calc(40%); /* 50%の幅で、マージンやパディングを考慮 */
+}
+
+.item.w-60 {
+  /* 子要素の幅を設定 */
+  width: calc(60%); /* 50%の幅で、マージンやパディングを考慮 */
+}
+
+
+  @media print{
+    *{
+      max-width: 100%;
+    }
+    body, div.content{
+      margin:0;
+      padding:0;
+      width:100%
+    }
+    h1{
+      margin-top: 0;
+      padding-top: 0;
+    }
+    h2, h3{
+      padding-bottom: 0;
+      margin:0.5em 0 0.5em 0;
+      break-after: avoid-page;
+      orphans: 2;
+    }
+
+    h4{
+      margin: 0 0 0.5em
+    }
+    a{
+      word-break: break-all
+    }
+    
+    
+  }
+  
