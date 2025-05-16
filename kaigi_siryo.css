@@ -41,6 +41,17 @@
   .center{
     text-align: center;
   }
+
+  /* sup sub 基本スタイル定義 */
+
+  sup.footnote-ref {
+    font-size: 9pt;
+    vertical-align: super;
+  }
+  sub {
+    font-size: 9pt;
+    vertical-align: sub;
+  }
   
   ul{
     padding-left: 2em
