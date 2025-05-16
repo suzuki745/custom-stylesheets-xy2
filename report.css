@@ -82,9 +82,16 @@ sub {
   vertical-align: sub;
 }
 
-table.no-border{
-  border:none;
-  * { border:none}
+table.no-border,
+table.no-border th,
+table.no-border td,
+table.no-border tr {
+  border: none;
+  border-collapse: collapse;
+}
+
+table.no-border * {
+  border: none !important;
 }
 
 ul {
