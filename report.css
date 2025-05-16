@@ -6,7 +6,9 @@
 
   @top-left {
     content: url("https://suzuki745.github.io/custom-stylesheets-xy2/images/confidential.svg");
-    
+    transform: scale(1.1); /* 2倍に拡大 */
+    transform-origin: top left; /* 拡大の中心点を左上に設定 */
+    display: inline-block; /* 念のため追加 */
   }
 
   @top-right {
