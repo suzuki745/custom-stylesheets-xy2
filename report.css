@@ -4,15 +4,11 @@
     size: A4;
     margin: 20mm 20mm 14mm 20mm;
     @top-left {
-    content: "社外秘・内部資料";
-    color: red;
-    border: 1px solid black;
-    padding: 5px;
-    font-size: 12px;
-    /* position: fixed;  @pageルール内では不要 */
-    top: 1cm; /* ページのmarginに合わせて調整 */
-    left: 2cm; /* ページのmarginに合わせて調整 */
-    display: block; /* 念のため */
+
+      content: span(confidential); /* span要素を参照 */
+      display: block;
+      top: 1cm;
+      left: 1cm;
     }
     @top-right{
       content: "※原則1週間以内に報告";
@@ -23,6 +19,15 @@
       content: counter(page)" / "counter(pages) ;
       }
   }
+
+
+span#confidential {
+  color: red;
+  border: 1px solid black;
+  padding: 5px;
+  font-size: 12px;
+  display: inline-block; /* または block */
+}  
 
 *{
     font-size:11pt;
