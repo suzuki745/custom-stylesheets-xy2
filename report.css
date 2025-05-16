@@ -82,6 +82,11 @@ sub {
   vertical-align: sub;
 }
 
+table.no-border{
+  border:none;
+  * { border:none}
+}
+
 ul {
   /*リストのネストが多重化しやすいのでインデントちょっと狭める*/
   padding-left: 1em
@@ -176,14 +181,6 @@ ol.maru li {
   margin-bottom: 1rem;
 }
 
-@page {
-  size: A4;
-  margin: 20mm 20mm 20mm 20mm;
-
-  @bottom-center {
-    content: counter(page)" / " counter(pages);
-  }
-}
 
 /* 2段組み */
 
