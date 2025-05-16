@@ -37,20 +37,8 @@ h1 {
   text-align: left;
   font-size: 12pt;
   font-family: 'MS Gothic', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  border: none
-}
-
-h1>span {
-  display: inline-block;
-  margin-right: 1em;
-  /* 文字間 */
-  border-bottom: 1px solid currentColor;
-  /* 下線 */
-}
-
-h1>span:last-child {
-  margin-right: 0;
-  /* 最後の文字の後に余計な間隔を作らない */
+  border: none;
+  text-decoration:underline
 }
 
 h2 {
