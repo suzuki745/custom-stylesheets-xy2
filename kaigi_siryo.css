@@ -103,6 +103,11 @@
     list-style-type: '*';
   }
 
+table.no-border{
+        border: none;
+        thead, tr, th, td { border-bottom: none;}
+    }
+
   /* 写真を2行で表示する際に使用 */
 
   .grid {
