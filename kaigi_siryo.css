@@ -105,7 +105,7 @@
 
 table.no-border{
         border: none;
-        thead, tr, th, td { border-bottom: none;}
+        thead, tr, th, td { border-bottom: none; border-top:none;}
     }
 
   /* 写真を2行で表示する際に使用 */
