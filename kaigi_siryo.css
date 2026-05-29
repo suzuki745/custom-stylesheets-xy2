@@ -6,31 +6,39 @@
   suffix: " ";
 }
 
-* {
-  font-size: 11pt;
-  font-family: "Times New Roman", "Yu Mincho", "MS Mincho", serif;
+/* Base */
 
-  line-height: 1.3em;
+body {
+  font-family: "Times New Roman", "Yu Mincho", "MS Mincho", serif;
+  font-size: 11pt;
+  line-height: 1.3;
+}
+
+* {
   vertical-align: baseline;
 }
 
+/* Headings */
+
 h1 {
-  text-align: center;
-  font-size: 14pt;
   border: none;
+  font-size: 14pt;
+  text-align: center;
 }
 
 h2 {
+  border: none;
   font-size: 12pt;
   font-weight: bold;
-  border: none
 }
 
 h3 {
+  border: none;
   font-size: 12pt;
   font-weight: normal;
-  border: none;
 }
+
+/* Text helpers */
 
 p {
   margin-bottom: 0.5em;
@@ -49,47 +57,29 @@ p.right {
   text-align: center;
 }
 
-/* sup sub 基本スタイル定義 */
+sup.footnote-ref,
+sub {
+  font-size: 9pt;
+}
 
 sup.footnote-ref {
-  font-size: 9pt;
   vertical-align: super;
 }
 
 sub {
-  font-size: 9pt;
   vertical-align: sub;
 }
 
+/* Lists */
+
 ul {
-  padding-left: 2em
+  padding-left: 2em;
 }
 
 li,
-ul>li>ol>li {
-  text-indent: 0em;
-  vertical-align: middle
-}
-
-ol.custom-marker>li {
-  margin-bottom: 0.5em
-}
-
-ol.custom-marker {
-  counter-reset: list;
-}
-
-ol.custom-marker>li {
-  list-style: none;
-  counter-increment: list;
-}
-
-ol.custom-marker.parens-around.lower-roman>li::marker {
-  content: "(" counter(list, lower-roman) ")\a0";
-}
-
-ol.custom-marker.parens-around.decimal>li::marker {
-  content: "（" counter(list) "）\a0";
+ul > li > ol > li {
+  text-indent: 0;
+  vertical-align: middle;
 }
 
 ul.no-indent,
@@ -97,12 +87,11 @@ ol.no-indent {
   padding-left: 0.5em;
 }
 
-ul>li.no-disc,
-ul.no-disc>li {
+ul > li.no-disc,
+ul.no-disc > li {
   list-style: none;
-  padding-left: 0;
+  margin-bottom: 0.4em;
   padding: 1px 0;
-  margin-bottom: 0.4em
 }
 
 ol.maru {
@@ -110,97 +99,112 @@ ol.maru {
   list-style-type: circled;
 }
 
-.border-box {
-  border: solid 1px black;
-  padding: 1px 2px 0;
-  line-height: 1em
-}
-
 .asterisks {
-  list-style-type: '*';
+  list-style-type: "*";
 }
 
-table.no-border {
-  border: none;
+ol.custom-marker {
+  counter-reset: item;
 }
 
+ol.custom-marker > li {
+  position: relative;
+  list-style: none;
+  margin-bottom: 0.5em;
+  counter-increment: item;
+  padding-left: 2.5em;
+}
+
+ol.custom-marker.parens-around > li::before {
+  position: absolute;
+  left: 0;
+  min-width: 2.5em;
+}
+
+ol.custom-marker.parens-around.lower-roman > li::before {
+  content: "(" counter(item, lower-roman) ") ";
+}
+
+ol.custom-marker.parens-around.decimal > li::before {
+  content: "（" counter(item) "） ";
+}
+
+/* Tables and boxes */
+
+table.no-border,
 table.no-border * {
   border: none;
 }
 
-/* 写真を2行で表示する際に使用 */
+.border-box {
+  border: 1px solid black;
+  line-height: 1;
+  padding: 1px 2px 0;
+}
+
+.admonition {
+  --admonition-border-color: #2a9d8f;
+  --admonition-background-color: #e9edc9;
+  --admonition-text-color: #283618;
+  --admonition-icon: "💡";
+
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--admonition-border-color);
+  border-radius: 5px;
+  background-color: var(--admonition-background-color);
+  color: var(--admonition-text-color);
+  padding: 1rem;
+}
+
+/* Layout helpers */
 
 .grid {
   display: grid;
+  max-width: 600px;
   grid-template-columns: repeat(auto-fill, minmax(40%, auto));
   gap: 0.5em;
-  max-width: 600px;
-  padding: 0;
   margin: 0;
+  padding: 0;
 
-  &>li {
+  & > li {
     font-size: 9pt;
-    text-align: center;
     list-style: none;
+    text-align: center;
   }
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.item.w-40 {
+  width: 40%;
+}
+
+.item.w-50 {
+  width: 50%;
+}
+
+.item.w-60 {
+  width: 60%;
 }
 
 .pagebreak {
   page-break-after: always;
 }
 
-.admonition {
-  --admonition-border-color: #2a9d8f;
-  /* 緑色のライン */
-  --admonition-background-color: #e9edc9;
-  /* 薄い黄緑色の背景 */
-  --admonition-text-color: #283618;
-  /* 濃い緑色のテキスト */
-  --admonition-icon: "💡";
-  /* アイコンを変更可能 */
-
-  padding: 1rem;
-  border-left: 4px solid var(--admonition-border-color);
-  background-color: var(--admonition-background-color);
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
+/* Print */
 
 @page {
   size: A4;
-  margin: 20mm 20mm 20mm 20mm;
+  margin: 20mm;
 
   @bottom-center {
-    content: counter(page)" / " counter(pages);
+    content: counter(page) " / " counter(pages);
   }
 }
-
-/* 2段組み */
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0
-}
-
-.item.w-50 {
-  /* 子要素の幅を設定 */
-  width: calc(50%);
-  /* 50%の幅で、マージンやパディングを考慮 */
-}
-
-.item.w-40 {
-  /* 子要素の幅を設定 */
-  width: calc(40%);
-  /* 50%の幅で、マージンやパディングを考慮 */
-}
-
-.item.w-60 {
-  /* 子要素の幅を設定 */
-  width: calc(60%);
-  /* 50%の幅で、マージンやパディングを考慮 */
-}
-
 
 @media print {
   * {
@@ -211,7 +215,7 @@ table.no-border * {
   div.content {
     margin: 0;
     padding: 0;
-    width: 100%
+    width: 100%;
   }
 
   h1 {
@@ -221,19 +225,17 @@ table.no-border * {
 
   h2,
   h3 {
+    margin: 0.5em 0;
     padding-bottom: 0;
-    margin: 0.5em 0 0.5em 0;
     break-after: avoid-page;
     orphans: 2;
   }
 
   h4 {
-    margin: 0 0 0.5em
+    margin: 0 0 0.5em;
   }
 
   a {
-    word-break: break-all
+    word-break: break-all;
   }
-
-
 }
