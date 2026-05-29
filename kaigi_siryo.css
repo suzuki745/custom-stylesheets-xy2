@@ -98,8 +98,7 @@ ol.no-indent {
 }
 
 ul>li.no-disc,
-ul.no-disc>li,
-ol.maru li {
+ul.no-disc>li {
   list-style: none;
   padding-left: 0;
   padding: 1px 0;
