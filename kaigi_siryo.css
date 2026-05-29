@@ -105,9 +105,8 @@ ul.no-disc>li {
   margin-bottom: 0.4em
 }
 
-
-
-ol.maru>li {
+ol.maru {
+  padding-left: 2em;
   list-style-type: circled;
 }
 
