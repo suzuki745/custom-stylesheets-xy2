@@ -1,0 +1,192 @@
+/* 和文レター（依頼状・案内状など）用 A4 1枚スタイル
+ *
+ * 使い方：本文全体を `:::: letter` で囲み、各ブロックを下記クラスのコンテナで書く。
+ * 1枚に収める調整は .letter に style="--letter-font-size: 10pt" のように変数を上書きする。
+ */
+
+/* Variables */
+
+.letter {
+  --letter-font-family: "Yu Mincho", "YuMincho", "Hiragino Mincho ProN", "BIZ UDPMincho", "MS PMincho", serif;
+  --letter-font-size: 10.5pt;
+  --letter-line-height: 1.65;
+  --letter-padding: 14mm 24mm 8mm;
+  --letter-gap: 1em;
+  --letter-border: 1px solid #000;
+}
+
+/* Base */
+
+html {
+  background-color: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.letter {
+  box-sizing: border-box;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 2em auto;
+  padding: var(--letter-padding);
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: #000;
+  font-family: var(--letter-font-family);
+  font-size: var(--letter-font-size);
+  line-height: var(--letter-line-height);
+}
+
+.letter *,
+.letter *::before,
+.letter *::after {
+  box-sizing: border-box;
+}
+
+.letter p,
+.letter h1,
+.letter h2,
+.letter h3,
+.letter ul,
+.letter ol,
+.letter table {
+  margin: 0;
+}
+
+.letter h1,
+.letter h2,
+.letter h3 {
+  border: none;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.letter a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Header blocks */
+
+/* 文書番号・日付 */
+.letter .doc-no {
+  text-align: right;
+}
+
+/* 宛先 */
+.letter .addressee {
+  margin-top: var(--letter-gap);
+}
+
+/* 差出人 */
+.letter .sender {
+  margin-top: calc(var(--letter-gap) / 2);
+  text-align: right;
+}
+
+/* 件名（h1 か .subject） */
+.letter h1,
+.letter .subject {
+  margin: calc(var(--letter-gap) * 1.25) 0 var(--letter-gap);
+  font-size: 1.25em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* Body blocks */
+
+/* 本文：段落を1字下げ。拝啓や【】見出しの行は .no-indent */
+.letter .content p {
+  text-indent: 1em;
+}
+
+.letter .content + .content,
+.letter .kigaki + .content {
+  margin-top: var(--letter-gap);
+}
+
+/* 記書きの表 */
+.letter .kigaki table {
+  width: 100%;
+  border-collapse: collapse;
+  line-height: 1.5;
+}
+
+.letter .kigaki td,
+.letter .kigaki th {
+  padding: 0.2em 0.6em;
+  border: var(--letter-border);
+  font-weight: normal;
+  text-align: left;
+  vertical-align: top;
+}
+
+.letter .kigaki td:first-child,
+.letter .kigaki th:first-child {
+  width: 10.5em;
+  white-space: nowrap;
+}
+
+.letter .kigaki.no-border td,
+.letter .kigaki.no-border th {
+  border: none;
+}
+
+/* 問い合わせ先：枠囲みで右寄せ */
+.letter .contact {
+  width: fit-content;
+  margin: var(--letter-gap) 0 0 auto;
+  padding: 0.5em 1em;
+  border: var(--letter-border);
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+/* Text helpers（kaigi_siryo.css と同名） */
+
+.letter .right {
+  text-align: right;
+}
+
+.letter .center {
+  text-align: center;
+}
+
+.letter .no-indent,
+.letter .content p.no-indent {
+  text-indent: 0;
+}
+
+/* 「記」：前後に少し間を空けて中央 */
+.letter .ki {
+  margin: 0.75em 0 0.5em;
+  text-align: center;
+}
+
+/* 「以上」 */
+.letter .ijo {
+  margin-top: 0.75em;
+  text-align: right;
+}
+
+/* Print */
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html {
+    background-color: transparent;
+  }
+
+  .letter {
+    margin: 0;
+    box-shadow: none;
+  }
+}
